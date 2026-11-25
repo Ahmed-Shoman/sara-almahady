@@ -167,3 +167,10 @@ body.index .s-block--testimonials .swiper-slide>div,body.index .s-block--testimo
   .sa-mbar .btn{flex:1;padding:13px 10px;font-size:15.5px}
   body.has-sa-mbar{padding-bottom:70px}
 }
+
+/* products slider title */
+body.index .s-block--best-offers .s-slider-block__title-right h2{font-family:'Amiri',serif!important;font-size:38px!important;color:var(--sa-ink)!important;line-height:1.35}
+body.index .s-block--best-offers .s-slider-block__title-right:before{content:"الأكثر طلباً";display:block;color:var(--sa-gold);font-weight:700;font-size:15px}
+body.index .s-block--best-offers .s-slider-block__title a{color:var(--sa-rose-d)!important;font-weight:700}
+body.index #sa-cats{padding-bottom:20px}
+@media (max-width:900px){body.index .s-block--best-offers .s-slider-block__title-right h2{font-size:28px!important}}
