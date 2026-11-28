@@ -174,3 +174,17 @@ body.index .s-block--best-offers .s-slider-block__title-right:before{content:"ا
 body.index .s-block--best-offers .s-slider-block__title a{color:var(--sa-rose-d)!important;font-weight:700}
 body.index #sa-cats{padding-bottom:20px}
 @media (max-width:900px){body.index .s-block--best-offers .s-slider-block__title-right h2{font-size:28px!important}}
+
+/* 3 categories + reviews section */
+.sa-cats.sa-cats-3{grid-template-columns:repeat(3,1fr);max-width:960px;margin-inline:auto}
+.sa-said{background:var(--sa-cream);border-block:1px solid var(--sa-line)}
+.sa-said-row{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px;justify-content:center}
+.sa-said-card{flex:0 0 220px;scroll-snap-align:center;border-radius:18px;overflow:hidden;border:6px solid #fff;box-shadow:var(--sa-sh);transition:.3s;background:#fff}
+.sa-said-card:hover{transform:translateY(-6px)}
+.sa-said-card img{width:100%;aspect-ratio:9/16;object-fit:cover;object-position:top;display:block}
+@media (max-width:900px){
+  .sa-cats.sa-cats-3{grid-template-columns:1fr 1fr}
+  .sa-cats.sa-cats-3 .sa-cat:last-child{grid-column:1/-1}
+  .sa-said-row{justify-content:flex-start}
+  .sa-said-card{flex-basis:62%}
+}

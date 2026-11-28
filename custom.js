@@ -22,12 +22,12 @@
     };
     var WA='https://wa.me/966564121602';
     var CAT={
-      sleep:'/%D9%82%D8%B5%D8%B5-%D9%85%D8%A7-%D9%82%D8%A8%D9%84-%D8%A7%D9%84%D9%86%D9%88%D9%85/c447407648',
-      values:'/%D8%A7%D9%84%D9%82%D9%8A%D9%85-%D9%88%D8%A7%D9%84%D8%A3%D8%AE%D9%84%D8%A7%D9%82/c1953957153',
-      edu:'/%D8%AA%D8%B9%D9%84%D9%8A%D9%85-%D9%88%D8%A3%D8%A8%D8%AC%D8%AF%D9%8A%D8%A7%D8%AA/c1221445415',
-      games:'/%D8%A3%D9%84%D8%B9%D8%A7%D8%A8-%D8%A7%D9%84%D8%B9%D8%A7%D8%A6%D9%84%D8%A9/c2128656422',
-      gifts:'/%D8%A7%D9%84%D9%87%D8%AF%D8%A7%D9%8A%D8%A7-%D9%88%D8%A7%D9%84%D8%A8%D8%A7%D9%82%D8%A7%D8%AA/c756783397'
+      mom:'/%D9%83%D8%AA%D8%A8-%D8%A7%D9%84%D8%A3%D9%85%D9%88%D9%85%D8%A9/c1953957153',
+      kids:'/%D9%82%D8%B5%D8%B5-%D8%A7%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84/c447407648',
+      work:'/%D8%A7%D9%84%D9%88%D8%B1%D8%B4-%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9/c1221445415'
     };
+    var REV='https://cdn.jsdelivr.net/gh/Ahmed-Shoman/sara-almahady@9a5ffb19bfd81d678a806f8a445999dbe843bbc6/img/';
+    var REVIEWS=['04-review1','05-review2','06-review3','07-review4','08-review5'];
     /* category links are relative to the store root (works on the domain and on salla.sa/SaraAlwahedy) */
     var root=(document.querySelector('.store-header a.navbar-brand')||{}).getAttribute?document.querySelector('.store-header a.navbar-brand').getAttribute('href'):'/';
     root=(root||'/').replace(/\/$/,'');
@@ -76,12 +76,10 @@
       '<div class="chip a">'+ic('book')+'قصص جديدة كل شهر</div><div class="chip b">'+ic('gift')+'تغليف هدية مجاني</div></div></div></section>');
 
     function cat(href,bg,fg,icon,t,s){return '<a class="sa-cat" href="'+u(href)+'" style="--bg1:'+bg+';--fg1:'+fg+'"><div class="ph"><svg><use href="#sa-'+icon+'"/></svg></div><h3>'+t+'</h3><span>'+s+'</span></a>';}
-    var cats=el('<section class="sa sa-sec" id="sa-cats"><div class="wrap"><div class="head"><span class="eyebrow">تسوّق بسهولة</span><h2>اختر ما يناسب عائلتك</h2><p>أقسام واضحة تختصر عليك الطريق إلى القصة أو الأداة المناسبة لعمر طفلك.</p></div><div class="sa-cats">'+
-      cat(CAT.sleep,'#FDE7E9','#B04A66','moon','قصص ما قبل النوم','حكايات هادئة وأحلام سعيدة')+
-      cat(CAT.values,'#F4EBD9','#A67C37','heart','القيم والأخلاق','سلاسل تربوية ممتعة')+
-      cat(CAT.edu,'#E7EFE4','#5F7F5B','abc','تعليم وأبجديات','بطاقات وكتب تفاعلية')+
-      cat(CAT.games,'#FADDE3','#C0587A','chat','ألعاب العائلة','حوارات وأنشطة مشتركة')+
-      cat(CAT.gifts,'#F4EBD9','#A67C37','gift','الهدايا والباقات','جاهزة للإهداء بتغليف أنيق')+
+    var cats=el('<section class="sa sa-sec" id="sa-cats"><div class="wrap"><div class="head"><span class="eyebrow">تسوّق بسهولة</span><h2>اختر ما يناسب عائلتك</h2><p>أقسام واضحة تختصر عليك الطريق إلى القصة أو الأداة المناسبة لعمر طفلك.</p></div><div class="sa-cats sa-cats-3">'+
+      cat(CAT.mom,'#FDE7E9','#B04A66','heart','كتب الأمومة','رفيقكِ في رحلة الأمومة')+
+      cat(CAT.kids,'#F4EBD9','#A67C37','moon','قصص الأطفال','حكايات تُقرأ معاً وتغرس القيم')+
+      cat(CAT.work,'#E7EFE4','#5F7F5B','sparkle','الورش التدريبية','مهارات تتعلمينها وتطبقينها مع طفلك')+
       '</div></div></section>');
 
     var trust=el('<section class="sa sa-trust"><div class="wrap"><div class="sa-tg">'+
@@ -97,6 +95,10 @@
       '<p>كل منتج يمرّ بمعيار واحد: هل أقرؤه على أطفالي بكل اطمئنان؟ إن كان الجواب نعم، وجد طريقه إليكم.</p>'+
       '<div class="sa-vals"><div>'+ic('book')+'محتوى هادف</div><div>'+ic('heart')+'قيم أصيلة</div><div>'+ic('sparkle')+'جودة مختارة</div></div>'+
       '<span class="script sign">Sara</span></div></div></section>');
+
+    var said=el('<section class="sa sa-sec sa-said" id="sa-said"><div class="wrap"><div class="head"><span class="eyebrow">آراء القارئات</span><h2>قالوا عن «أمومة بيضاء»</h2><p>رسائل وصلتنا من أمهات قرأن الكتاب، كما شاركنها معنا.</p></div><div class="sa-said-row">'+
+      REVIEWS.map(function(n){return '<a class="sa-said-card" href="'+REV+n+'.jpg" target="_blank" rel="noopener"><img loading="lazy" src="'+REV+n+'.jpg" alt="رأي قارئة عن كتاب أمومة بيضاء"></a>';}).join('')+
+      '</div></div></section>');
 
     function q(s,a,o){return '<details'+(o?' open':'')+'><summary>'+s+'</summary><p>'+a+'</p></details>';}
     var faq=el('<section class="sa sa-sec" id="sa-faq"><div class="wrap"><div class="head"><span class="eyebrow">نجيبك قبل أن تسأل</span><h2>الأسئلة الشائعة</h2></div><div class="sa-fq">'+
@@ -124,6 +126,7 @@
     }
     var tail=end||null;
     main.insertBefore(story,tail);
+    main.insertBefore(said,tail);
     main.insertBefore(faq,tail);
     main.insertBefore(news,tail);
   }
